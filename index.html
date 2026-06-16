@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Laughing Umbrella</title>
+</head>
+<body>
+<canvas id="canvas" width="500" height="500"></canvas>
+
+<script>
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+
+// Umbrella top
+ctx.beginPath();
+ctx.arc(250, 200, 120, Math.PI, 2 * Math.PI);
+ctx.fillStyle = "#4A90E2";
+ctx.fill();
+ctx.stroke();
+
+// Scalloped edge
+for (let i = 130; i <= 370; i += 40) {
+    ctx.beginPath();
+    ctx.arc(i, 200, 20, 0, Math.PI);
+    ctx.stroke();
+}
+
+// Handle
+ctx.beginPath();
+ctx.moveTo(250, 200);
+ctx.lineTo(250, 350);
+ctx.strokeStyle = "black";
+ctx.lineWidth = 4;
+ctx.stroke();
+
+ctx.beginPath();
+ctx.arc(230, 370, 20, 0, Math.PI, false);
+ctx.stroke();
+
+// Eyes
+ctx.beginPath();
+ctx.arc(210, 160, 8, 0, Math.PI * 2);
+ctx.arc(290, 160, 8, 0, Math.PI * 2);
+ctx.fillStyle = "black";
+ctx.fill();
+
+// Laughing mouth
+ctx.beginPath();
+ctx.arc(250, 200, 40, 0, Math.PI);
+ctx.lineWidth = 3;
+ctx.stroke();
+
+// Laugh lines
+ctx.beginPath();
+ctx.arc(190, 190, 15, 0, Math.PI / 2);
+ctx.arc(310, 190, 15, Math.PI / 2, Math.PI);
+ctx.stroke();
+</script>
+</body>
+</html>
